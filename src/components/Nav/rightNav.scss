@@ -1,0 +1,32 @@
+.right-nav {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  div button svg{
+    transform: rotate(180deg);
+  }
+  div button .active{
+    transform: rotate(0deg);
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  ul {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    li {
+      list-style: none;
+    }
+    li:hover {
+      background-color: #eeeeee;
+    }
+  }
+  .cart-logo {
+    width: 20px;
+    height: 13px;
+    color: #43464e;
+  }
+}
