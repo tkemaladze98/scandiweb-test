@@ -37,9 +37,10 @@
       margin: 0px;
       display: flex;
       align-items: flex-start;
-      justify-content: space-evenly;
+      justify-content: center;
       svg {
         scale: 1.5;
+        margin: 0px 2px;
       }
     }
   }

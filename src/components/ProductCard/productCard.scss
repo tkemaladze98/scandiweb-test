@@ -4,22 +4,71 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: 386px;
-  img {
-    width: 356px;
-    height: 338px;
+  .img-div {
+    position: relative;
+    img {
+      width: 356px;
+      height: 338px;
+      object-fit: fill;
+    }
+    .add-cart-svg {
+      position: absolute;
+      bottom: -20px;
+      right: 30px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      .cart-logo {
+        position: absolute;
+        bottom: 30%;
+        right: 35%;
+        svg {
+          stroke: white;
+          path {
+            fill: white;
+          }
+        }
+      }
+      p {
+        margin: 0px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        svg {
+          scale: 1.5;
+          margin: 0px 2px;
+          stroke-width: 0.3px;
+        }
+      }
+    }
+    .out-of-stock {
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      text-align: center;
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+    }
   }
   p {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
-    color: #1D1F22;
+    color: #1d1f22;
   }
-  span{
+  span {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    color: #1D1F22;
+    color: #1d1f22;
   }
+}
+.isInStock{
+    opacity: 0.5;
 }
