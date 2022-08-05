@@ -1,0 +1,25 @@
+.card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 386px;
+  img {
+    width: 356px;
+    height: 338px;
+  }
+  p {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #1D1F22;
+  }
+  span{
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #1D1F22;
+  }
+}

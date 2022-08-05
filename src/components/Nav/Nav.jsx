@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import LeftNav from "./LeftNav";
 import MiddleNav from "./MiddleNav";
 import RightNav from "./RightNav";
@@ -10,7 +10,7 @@ export default class Nav extends Component {
       <div className="nav-wrapper">
         <LeftNav />
         <MiddleNav />
-        <RightNav />
+        <RightNav changeCurrency={this.props.changeCurrency} />
       </div>
     );
   }

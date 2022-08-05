@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Query } from "react-apollo";
 import { getCurrencies } from "../../services/gql-services";
 import "./rightNav.scss";
@@ -13,6 +13,7 @@ export default class RightNav extends Component {
   }
 
   changeCurrency = (currency) => {
+    this.props.changeCurrency(currency);
     this.setState({
       selectedCurrency: currency,
       isCurrencyVisible: !this.state.isCurrencyVisible,
@@ -33,7 +34,7 @@ export default class RightNav extends Component {
             return (
               <>
                 <div>
-                  <button onClick={this.currencyVisibility}>
+                  <button className="currencies" onClick={this.currencyVisibility}>
                     {this.state.selectedCurrency === null
                       ? currencies[0].symbol
                       : this.state.selectedCurrency.symbol}
@@ -57,7 +58,7 @@ export default class RightNav extends Component {
                     <ul>
                       {currencies.map((currency) => (
                         <li key={currency.label}>
-                          <button onClick={() => this.changeCurrency(currency)}>
+                          <button className="currencies" onClick={() => this.changeCurrency(currency)}>
                             {currency.symbol} {currency.label}
                           </button>
                         </li>
@@ -78,6 +79,33 @@ export default class RightNav extends Component {
                       fill="#43464E"
                     />
                   </svg>
+                  <p>
+                    {" "}
+                    <svg
+                      width="5"
+                      height="6"
+                      viewBox="0 0 5 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.44437 0.981402C1.2443 0.981402 0.254883 1.92762 0.254883 3.07511C0.254883 4.2226 1.24439 5.16882 2.44437 5.16882C3.64445 5.1696 4.63386 4.22339 4.63386 3.07571C4.63386 1.92804 3.64436 0.981201 2.44437 0.981201V0.981402ZM2.44437 3.90108C1.9599 3.90108 1.58071 3.53847 1.58071 3.07519C1.58071 2.61191 1.9599 2.24931 2.44437 2.24931C2.92885 2.24931 3.30804 2.61191 3.30804 3.07519C3.30722 3.5188 2.90748 3.90108 2.44437 3.90108Z"
+                        fill="#43464E"
+                      />
+                    </svg>
+                    <svg
+                      width="5"
+                      height="6"
+                      viewBox="0 0 5 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.44437 0.981402C1.2443 0.981402 0.254883 1.92762 0.254883 3.07511C0.254883 4.2226 1.24439 5.16882 2.44437 5.16882C3.64445 5.1696 4.63386 4.22339 4.63386 3.07571C4.63386 1.92804 3.64436 0.981201 2.44437 0.981201V0.981402ZM2.44437 3.90108C1.9599 3.90108 1.58071 3.53847 1.58071 3.07519C1.58071 2.61191 1.9599 2.24931 2.44437 2.24931C2.92885 2.24931 3.30804 2.61191 3.30804 3.07519C3.30722 3.5188 2.90748 3.90108 2.44437 3.90108Z"
+                        fill="#43464E"
+                      />
+                    </svg>
+                  </p>
                 </button>
               </>
             );

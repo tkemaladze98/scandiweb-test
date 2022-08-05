@@ -8,20 +8,30 @@ import Tech from "./components/Tech/Tech";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      selectedCurrency: {
+        label: "USD",
+        symbol: "$",
+        __typename: "Currency"
+      }
+    };
+  }
+
+  changeCurrency = (currency) => {
+    this.setState({ selectedCurrency: currency })
   }
 
   render() {
     return (
       <Router>
         <header>
-          <Nav />
+          <Nav changeCurrency={this.changeCurrency} />
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/clothes" element={<Clothes />} />
-            <Route path="/tech" element={<Tech />} />
+            <Route path="/" element={<HomePage selectedCurrency={this.state.selectedCurrency} />} />
+            <Route path="/clothes" element={<Clothes selectedCurrency={this.state.selectedCurrency} />} />
+            <Route path="/tech" element={<Tech selectedCurrency={this.state.selectedCurrency} />} />
           </Routes>
         </main>
       </Router>

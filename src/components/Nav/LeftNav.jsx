@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Query } from "react-apollo";
 import { getCategoryNames } from "../../services/gql-services";
 import { Link } from "react-router-dom";
@@ -8,7 +8,10 @@ export default class LeftNav extends Component {
   constructor() {
     super();
     this.state = {
-      activeRoute: "all",
+      activeRoute:
+        window.location.pathname === "/"
+          ? "all"
+          : window.location.pathname.split("/")[1],
     };
   }
 

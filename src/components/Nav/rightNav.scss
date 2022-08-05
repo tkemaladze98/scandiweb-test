@@ -2,16 +2,23 @@
   width: 30%;
   display: flex;
   justify-content: flex-end;
-  div button svg{
+  div button svg {
     transform: rotate(180deg);
   }
-  div button .active{
+  div button .active {
     transform: rotate(0deg);
   }
   button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+  }
+  .currencies {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28.8px;
   }
   ul {
     position: absolute;
@@ -25,8 +32,15 @@
     }
   }
   .cart-logo {
-    width: 20px;
-    height: 13px;
     color: #43464e;
+    p {
+      margin: 0px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      svg {
+        scale: 1.5;
+      }
+    }
   }
 }
