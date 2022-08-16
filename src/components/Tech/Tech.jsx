@@ -20,6 +20,7 @@ export default class Tech extends Component {
               <div className="cards-wrapper">
                 {productData.map((product, index) => (
                   <ProductCard
+                    selectProduct={this.props.selectProduct}
                     key={index}
                     product={product}
                     selectedCurrency={this.props.selectedCurrency}

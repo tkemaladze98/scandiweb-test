@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import "./productCard.scss";
 
 export default class ProductCard extends Component {
@@ -6,14 +7,21 @@ export default class ProductCard extends Component {
     super(props);
     this.state = {};
   }
+
+  changeProduct = () => {
+    this.props.selectProduct(this.props.product);
+  };
   render() {
-    console.log(this.props.product);
     return (
-      <div className={this.props.product.inStock ? "card" : "card isInStock"}>
+      <div className={this.props.product.inStock ? "card isInStock" : "card"}>
         <div className="img-div">
           <img src={this.props.product?.gallery[0]} alt="" />
           {this.props.product.inStock ? (
-            <button className="add-cart-svg">
+            <Link
+              onClick={this.changeProduct}
+              to="/cart"
+              className="add-cart-svg"
+            >
               <svg
                 width="52"
                 height="52"
@@ -64,7 +72,7 @@ export default class ProductCard extends Component {
                   </svg>
                 </p>
               </div>
-            </button>
+            </Link>
           ) : (
             <span className="out-of-stock">OUT OF STOCK</span>
           )}
