@@ -1,8 +1,8 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import LeftNav from "./LeftNav";
+import "./nav.scss";
 import MiddleNav from "./MiddleNav";
 import RightNav from "./RightNav";
-import "./nav.scss";
 
 export default class Nav extends Component {
   render() {
@@ -10,7 +10,12 @@ export default class Nav extends Component {
       <div className="nav-wrapper">
         <LeftNav />
         <MiddleNav />
-        <RightNav changeCurrency={this.props.changeCurrency} />
+        <RightNav
+          updateCount={this.props.updateCount}
+          selectedCurrency={this.props.selectedCurrency}
+          cartItems={this.props.cartItems}
+          changeCurrency={this.props.changeCurrency}
+        />
       </div>
     );
   }

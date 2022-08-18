@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "./middleNav.scss";
 
 export default class MiddleNav extends Component {

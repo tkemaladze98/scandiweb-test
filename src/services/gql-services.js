@@ -13,7 +13,7 @@ const getAllProducts = () => gql`
         inStock
         gallery
         prices {
-          currency{
+          currency {
             label
             symbol
           }
@@ -37,7 +37,7 @@ const getProductCategories = () => gql`
         inStock
         gallery
         prices {
-          currency{
+          currency {
             label
             symbol
           }
@@ -72,9 +72,9 @@ query {
 
 const getCurrencies = () => gql`
   query {
-    currencies{
+    currencies {
       label
-    symbol
+      symbol
     }
   }
 `;
@@ -85,7 +85,7 @@ const getPrices = () => gql`
       products {
         id
         prices {
-          currency{
+          currency {
             label
             symbol
           }
@@ -125,11 +125,11 @@ query {
 `;
 
 export {
-    getAllProducts,
-    getProductCategories,
-    getCategoryNames,
-    getProductAttributes,
-    getCurrencies,
-    getPrices,
-    getProduct
+  getAllProducts,
+  getProductCategories,
+  getCategoryNames,
+  getProductAttributes,
+  getCurrencies,
+  getPrices,
+  getProduct,
 };

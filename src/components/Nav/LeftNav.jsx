@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { Query } from "react-apollo";
 import { getCategoryNames } from "../../services/gql-services";
 import { Link } from "react-router-dom";
@@ -14,7 +14,6 @@ export default class LeftNav extends Component {
           : window.location.pathname.split("/")[1],
     };
   }
-
   changeRoute = (route) => {
     this.setState({ activeRoute: route });
   };
@@ -23,8 +22,9 @@ export default class LeftNav extends Component {
       <Query query={getCategoryNames()}>
         {({ loading, error, data }) => {
           if (loading) return <p>Loading...</p>;
-          if (error) return <p>Error : </p>;
+          if (error) return <p>Error:</p>;
           const { categories } = data;
+
           return (
             <ul className="left-nav">
               {categories.map((category) => (
